@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use('/static', express.static('/tmp'));
 app.get("/", (req, res) => res.send("Hello World!"));
 app.post("/scrape", async (req, res) => {
-  const data = await runner('datocms');
+  const data = await runner('lyket');
   return res.json({ data });
 });
 
