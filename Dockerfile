@@ -22,10 +22,6 @@ COPY package.json /app
 RUN npm install
 COPY . /app
 
-# Start server on port 3000∂
-EXPOSE 3001
-ENV PORT=3001
-
 # Creating Display
 ENV DISPLAY :99
 
