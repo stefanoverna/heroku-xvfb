@@ -2,7 +2,7 @@ const { launch, getStream } = require('puppeteer-stream');
 const fs = require('fs');
 
 const runner = async (search) => {
-  const file = fs.createWriteStream('/out/test.webm');
+  const file = fs.createWriteStream('/tmp/test.webm');
 
   let data = [];
 
@@ -55,7 +55,7 @@ const runner = async (search) => {
     await cleanup();
   } catch (e) {
     console.log('Error happened', e);
-    await page.screenshot({ path: '/out/error.png' });
+    await page.screenshot({ path: '/tmp/error.png' });
     await cleanup();
   }
   return data;
